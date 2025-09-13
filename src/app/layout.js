@@ -1,5 +1,37 @@
 import '../styles/globals.css';
 
+const HOMEPAGE_URL = 'https://iu-resume-editor.vercel.app/';
+const LOGO_URL = `${HOMEPAGE_URL}assets/favicon.png`;
+const OWNER_NAME = 'Yarik Drago';
+
+function buildOrganizationJsonLd({ homepageUrl, logoUrl, ownerName }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    url: homepageUrl,
+    logo: logoUrl,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+91 9999999999',
+      contactType: 'customer service',
+    },
+    image: logoUrl,
+    description:
+      "'Create ATS‑friendly resumes. Templates and smart tips to pass Applicant Tracking Systems.'\n",
+    founder: ownerName,
+    foundingDate: '2023',
+    foundingLocation: 'IN',
+    areaServed: 'SR',
+    mainEntityOfPage: homepageUrl,
+    // knowsAbout: `${keywords}`,
+    knowsLanguage: 'English',
+    memberOf: ownerName,
+    owns: ownerName,
+    publishingPrinciples: homepageUrl,
+    slogan: 'Get hired with an ATS-optimized resume',
+  };
+}
+
 export const metadata = {
   title: {
     default: 'IU Resume Editor — Free ATS Resume Builder',
@@ -68,8 +100,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const orgJsonLd = buildOrganizationJsonLd({
+    homepageUrl: HOMEPAGE_URL,
+    logoUrl: LOGO_URL,
+    ownerName: OWNER_NAME,
+  });
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+      </head>
       <body>
         <div className={'content'}>{children}</div>
       </body>

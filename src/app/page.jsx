@@ -2,6 +2,7 @@ import React from 'react';
 import Builder from '../components/builder';
 
 export const metadata = {
+  title: 'Create ATS‑Friendly Resume Online',
   keywords: [
     'ATS resume builder',
     'ATS-friendly resume',
