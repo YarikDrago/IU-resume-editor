@@ -60,7 +60,7 @@ const Form = () => {
       className={
         'form ' +
         'relative flex flex-col justify-between bg-fuchsia-600 exclude-print md:h-screen ' +
-        `md:w-[${resumeData.sidebarIsCollapsed ? 50 : 400}px]`
+        (resumeData.sidebarIsCollapsed ? 'md:w-[50px]' : 'md:w-[400px]')
       }
     >
       {!resumeData.sidebarIsCollapsed && (
