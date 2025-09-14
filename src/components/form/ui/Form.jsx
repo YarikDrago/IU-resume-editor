@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import LoadUnload from '../components/LoadUnload';
-import PersonalInformation from '../components/personalInformation/ui/PersonalInformation';
-import SocialMedias from '../components/socialMedia/ui/SocialMedias';
-import Summary from '../components/Summary';
-import Educations from '../components/education/ui/Educations';
-import WorkExperiences from '../components/workExperience/ui/WorkExperiences';
-import Projects from '../components/projects/ui/Projects';
-import Skills from '../components/skills/ui/Skills';
-import Languages from '../components/languages/ui/Languages';
-import TestsAndCertifications from '../components/testsAndCertifications/ui/TestsAndCertifications';
+import PersonalInformation from '../components/formSections/personalInformation/ui/PersonalInformation';
+import SocialMedias from '../components/formSections/socialMedia/ui/SocialMedias';
+import Summary from '../components/formSections/Summary';
+import Educations from '../components/formSections/education/ui/Educations';
+import WorkExperiences from '../components/formSections/workExperience/ui/WorkExperiences';
+import Projects from '../components/formSections/projects/ui/Projects';
+import Skills from '../components/formSections/skills/ui/Skills';
+import Languages from '../components/formSections/languages/ui/Languages';
+import TestsAndCertifications from '../components/formSections/testsAndCertifications/ui/TestsAndCertifications';
 import Navigator from '../components/navigator/ui/Navigator';
 import { ResumeContext } from '../../builder';
 
