@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import LoadUnload from '../components/LoadUnload';
 import PersonalInformation from '../components/formSections/personalInformation/ui/PersonalInformation';
 import SocialMedias from '../components/formSections/socialMedia/ui/SocialMedias';
 import Summary from '../components/formSections/Summary';
@@ -11,6 +10,8 @@ import Languages from '../components/formSections/languages/ui/Languages';
 import TestsAndCertifications from '../components/formSections/testsAndCertifications/ui/TestsAndCertifications';
 import Navigator from '../components/navigator/ui/Navigator';
 import { ResumeContext } from '../../builder';
+import Header from '../components/header/ui/Header';
+import FormCloseOpenBtn from '../../FormCloseOpenBtn';
 
 const blocks = [
   {
@@ -58,14 +59,22 @@ const Form = () => {
     <form
       className={
         'form ' +
-        'flex flex-col justify-between bg-fuchsia-600 exclude-print md:w-[400px] md:h-screen'
+        'relative flex flex-col justify-between bg-fuchsia-600 exclude-print md:h-screen ' +
+        `md:w-[${resumeData.sidebarIsCollapsed ? 50 : 400}px]`
       }
     >
-      <LoadUnload />
-      <div className={'flex flex-col flex-1 p-2 md:overflow-y-scroll'}>
-        {React.createElement(blocks[resumeData.navigationActiveIdx].component)}
-      </div>
-      <Navigator maxIdx={blocks.length - 1} />
+      {!resumeData.sidebarIsCollapsed && (
+        <>
+          <Header />
+          <div className={'flex flex-col flex-1 p-2 md:overflow-y-scroll'}>
+            {React.createElement(
+              blocks[resumeData.navigationActiveIdx].component,
+            )}
+          </div>
+          <Navigator maxIdx={blocks.length - 1} />
+        </>
+      )}
+      <FormCloseOpenBtn />
     </form>
   );
 };

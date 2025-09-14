@@ -1,7 +1,6 @@
 'use client';
 
 import React, { createContext, useState } from 'react';
-import FormCloseOpenBtn from '../components/FormCloseOpenBtn';
 import Preview from '../components/preview/ui/Preview';
 import DefaultResumeData from '../components/utility/DefaultResumeData';
 import dynamic from 'next/dynamic';
@@ -23,14 +22,12 @@ export default function Builder() {
         value={{
           resumeData,
           setResumeData,
-          // handleChange,
         }}
       >
         <div className="f-col gap-4 md:flex-row justify-evenly max-w-7xl md:mx-auto md:h-screen">
-          {!resumeData.sidebarIsCollapsed && <Form />}
+          <Form />
           <Preview />
         </div>
-        <FormCloseOpenBtn />
         <Print />
       </ResumeContext.Provider>
     </>
