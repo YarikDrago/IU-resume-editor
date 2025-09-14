@@ -107,6 +107,7 @@ const DefaultResumeData = {
     'Java Development Certified Professional',
   ],
   navigationActiveIdx: 0,
+  sidebarIsCollapsed: false,
 };
 
 export default DefaultResumeData;

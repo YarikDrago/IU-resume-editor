@@ -15,16 +15,7 @@ const Print = dynamic(() => import('../components/utility/WinPrint'), {
 });
 
 export default function Builder() {
-  // resume data
   const [resumeData, setResumeData] = useState(DefaultResumeData);
-
-  // form hide/show
-  const [formClose, setFormClose] = useState(false);
-
-  const handleChange = (e) => {
-    setResumeData({ ...resumeData, [e.target.name]: e.target.value });
-    console.log(resumeData);
-  };
 
   return (
     <>
@@ -32,14 +23,14 @@ export default function Builder() {
         value={{
           resumeData,
           setResumeData,
-          handleChange,
+          // handleChange,
         }}
       >
         <div className="f-col gap-4 md:flex-row justify-evenly max-w-7xl md:mx-auto md:h-screen">
-          {!formClose && <Form />}
+          {!resumeData.sidebarIsCollapsed && <Form />}
           <Preview />
         </div>
-        <FormCloseOpenBtn formClose={formClose} setFormClose={setFormClose} />
+        <FormCloseOpenBtn />
         <Print />
       </ResumeContext.Provider>
     </>
