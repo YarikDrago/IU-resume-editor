@@ -41,6 +41,14 @@
         @apply block text-gray-200 font-medium;
     }
 
+    .form input {
+        @apply w-full p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+    }
+
+    .form textarea {
+        @apply w-full p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+    }
+
     .pi {
         @apply p-2 mb-2 text-black bg-white rounded text-[0.9rem];
     }

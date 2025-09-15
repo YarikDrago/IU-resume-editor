@@ -16,10 +16,12 @@ const Dropdown = ({ options, activeOption, onChange }) => {
         className="
           w-full
           p-2
+          text-slate-50
           border
           border-gray-300
           rounded
-          bg-white
+          [&>option]:text-black
+          bg-transparent
           focus:outline-none
           focus:ring-2
           focus:ring-blue-500
