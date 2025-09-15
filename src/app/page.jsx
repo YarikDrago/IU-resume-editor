@@ -20,7 +20,7 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-[#7e2f2f] via-[#a044ff] to-[#fbd7e3]">
       <Builder />
     </div>
   );
