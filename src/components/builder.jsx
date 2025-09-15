@@ -16,12 +16,17 @@ const Print = dynamic(() => import('../components/utility/WinPrint'), {
 export default function Builder() {
   const [resumeData, setResumeData] = useState(DefaultResumeData);
 
+  const handleChange = (e) => {
+    setResumeData({ ...resumeData, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <ResumeContext.Provider
         value={{
           resumeData,
           setResumeData,
+          handleChange,
         }}
       >
         <div className="f-col md:flex-row justify-evenly w-full md:h-screen">
