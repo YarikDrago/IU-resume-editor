@@ -24,7 +24,7 @@ export default function Builder() {
           setResumeData,
         }}
       >
-        <div className="f-col gap-4 md:flex-row justify-evenly max-w-7xl md:mx-auto md:h-screen">
+        <div className="f-col md:flex-row justify-evenly w-full md:h-screen">
           <Form />
           <Preview />
         </div>

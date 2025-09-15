@@ -14,7 +14,11 @@ const A4PageWrapper = ({ children }) => {
     alertA4Size();
   }, []);
 
-  return <div className="w-8.5in">{children}</div>;
+  return (
+    <div className="w-[210mm] min-h-[297mm] p-5 box-border mx-auto bg-amber-50">
+      {children}
+    </div>
+  );
 };
 
 export default A4PageWrapper;

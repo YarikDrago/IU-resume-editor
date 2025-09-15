@@ -39,7 +39,8 @@ const FormCloseOpenBtn = () => {
         'absolute top-[5px] right-0 translate-x-1/2 ' +
         'font-bold rounded-full ' +
         'bg-white text-fuchsia-600 shadow-lg border-2 border-white ' +
-        'hidden md:block'
+        'hidden md:block ' +
+        'z-10'
       }
       onClick={handleChange}
     >
