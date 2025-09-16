@@ -10,7 +10,11 @@ const btnStyleClass =
 const Navigator = ({ maxIdx }) => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
   return (
-    <div className={'flex justify-between w-full bg-fuchsia-500 p-4'}>
+    <div
+      className={
+        'flex justify-between w-full bg-[var(--form-bg-secondary)] p-4'
+      }
+    >
       <button
         type="button"
         disabled={resumeData.navigationActiveIdx === 0}
