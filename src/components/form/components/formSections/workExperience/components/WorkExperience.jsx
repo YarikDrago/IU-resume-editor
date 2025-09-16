@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { handleWorkExperience } from '../units/handleWorkExperience';
 import { ResumeContext } from '../../../../../builder';
-import { BsTrash3 } from 'react-icons/bs';
 import { removeWorkExperience } from '../units/removeResumeExperience';
+import DeleteBtn from '../../../../shared/button/DeleteBtn';
 
 const WorkExperience = ({ workExperience, index }) => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -74,16 +74,11 @@ const WorkExperience = ({ workExperience, index }) => {
           />
         </div>
       </div>
-      <button
-        type="button"
+      <DeleteBtn
         onClick={() => {
           removeWorkExperience(resumeData, setResumeData, index);
         }}
-        aria-label="Remove"
-        className="p-2 h-fit text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <BsTrash3 />
-      </button>
+      />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import { addLanguage } from '../utils/addLanguage';
 import LanguageLine from '../components/LanguageLine';
-import { MdAddCircle } from 'react-icons/md';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const Languages = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -20,16 +20,11 @@ const Languages = () => {
           index={index}
         />
       ))}
-      <button
-        type="button"
+      <AddBtn
         onClick={() => {
           addLanguage(resumeData, setResumeData, 'languages');
         }}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { handleCertificate } from '../utils/handleCertificate';
-import { BsTrash3 } from 'react-icons/bs';
 import { removeCertificate } from '../utils/removeCertificate';
+import DeleteBtn from '../../../../shared/button/DeleteBtn';
 
 const TestAndCertificateLine = ({ resumeData, setResumeData, cert, index }) => {
   return (
@@ -14,16 +14,11 @@ const TestAndCertificateLine = ({ resumeData, setResumeData, cert, index }) => {
         value={cert}
         onChange={(e) => handleCertificate(resumeData, setResumeData, e, index)}
       />
-      <button
-        type="button"
+      <DeleteBtn
         onClick={() => {
           removeCertificate(resumeData, setResumeData, index);
         }}
-        aria-label="Remove"
-        className="p-2 text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <BsTrash3 />
-      </button>
+      />
     </div>
   );
 };

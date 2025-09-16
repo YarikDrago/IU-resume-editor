@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import WorkExperience from '../components/WorkExperience';
-import { MdAddCircle } from 'react-icons/md';
 import { addWorkExperience } from '../units/addWorkExperience';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const WorkExperiences = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -17,17 +17,11 @@ const WorkExperiences = () => {
           index={index}
         />
       ))}
-      <button
-        type="button"
+      <AddBtn
         onClick={() => {
-          // TODO add index
           addWorkExperience(resumeData, setResumeData);
         }}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      />
     </div>
   );
 };

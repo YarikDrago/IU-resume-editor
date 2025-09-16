@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import { addCertificate } from '../utils/addCertificate';
 import TestAndCertificateLine from '../components/TestAndCertificateLine';
-import { MdAddCircle } from 'react-icons/md';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const TestsAndCertifications = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -20,16 +20,11 @@ const TestsAndCertifications = () => {
           index={index}
         />
       ))}
-      <button
-        type="button"
+      <AddBtn
         onClick={() => {
           addCertificate(resumeData, setResumeData);
         }}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      />
     </div>
   );
 };

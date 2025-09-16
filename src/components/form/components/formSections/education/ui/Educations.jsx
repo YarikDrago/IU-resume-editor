@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import { addEducation } from '../units/addEducation';
 import Education from '../components/Education';
-import { MdAddCircle } from 'react-icons/md';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const Educations = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -13,16 +13,11 @@ const Educations = () => {
       {resumeData.education.map((education, index) => (
         <Education key={index} education={education} index={index} />
       ))}
-      <button
-        type="button"
+      <AddBtn
         onClick={() => {
           addEducation(resumeData, setResumeData);
         }}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      />
     </div>
   );
 };

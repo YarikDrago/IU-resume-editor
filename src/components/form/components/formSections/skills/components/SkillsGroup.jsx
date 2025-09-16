@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import { addSkill } from '../utlis/addSkill';
 import SkillLine from './SkillLine';
-import { MdAddCircle } from 'react-icons/md';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const SkillsGroup = ({ title }) => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -18,14 +18,7 @@ const SkillsGroup = ({ title }) => {
         <SkillLine key={index} skill={skill} title={title} index={index} />
       ))}
       {/* Add new skill button */}
-      <button
-        type="button"
-        onClick={() => addSkill(title, setResumeData)}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      <AddBtn onClick={() => addSkill(title, setResumeData)} />
     </div>
   );
 };

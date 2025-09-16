@@ -1,10 +1,10 @@
 import React from 'react';
 import { handleLanguage } from '../utils/handleLanguage';
-import { BsTrash3 } from 'react-icons/bs';
 import { removeLanguage } from '../utils/removeLanguage';
 import Dropdown from './Dropdown';
 import { LANGUAGE_LEVELS } from '../constants/languages';
 import { handleLanguageLevel } from '../utils/handleLanguageLevel';
+import DeleteBtn from '../../../../shared/button/DeleteBtn';
 
 const LanguageLine = ({ resumeData, setResumeData, lang, index }) => {
   // TODO replace hardcoded variables
@@ -26,16 +26,11 @@ const LanguageLine = ({ resumeData, setResumeData, lang, index }) => {
           handleLanguageLevel(resumeData, setResumeData, index, newLevel);
         }}
       />
-      <button
-        type="button"
+      <DeleteBtn
         onClick={() => {
           removeLanguage(resumeData, setResumeData, index);
         }}
-        aria-label="Remove"
-        className="p-2 text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <BsTrash3 />
-      </button>
+      />
     </div>
   );
 };

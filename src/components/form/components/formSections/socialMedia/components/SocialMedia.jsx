@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { handleSocialMedia } from '../units/handleSocialMedia';
 import { ResumeContext } from '../../../../../builder';
-import { BsTrash3 } from 'react-icons/bs';
 import { removeSocialMedia } from '../units/removeSocialMedia';
+import DeleteBtn from '../../../../shared/button/DeleteBtn';
 
 const SocialMedia = ({ socialMedia, index }) => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -30,16 +30,22 @@ const SocialMedia = ({ socialMedia, index }) => {
           }
         />
       </div>
-      <button
-        type="button"
+      {/*<Button*/}
+      {/*  type="button"*/}
+      {/*  onClick={() => {*/}
+      {/*    removeSocialMedia(resumeData, setResumeData, index);*/}
+      {/*  }}*/}
+      {/*  aria-label="Remove"*/}
+      {/*  variant={'text'}*/}
+      {/*  className="h-[40px]"*/}
+      {/*>*/}
+      {/*  <BsTrash3 />*/}
+      {/*</Button>*/}
+      <DeleteBtn
         onClick={() => {
           removeSocialMedia(resumeData, setResumeData, index);
         }}
-        aria-label="Remove"
-        className="p-2 text-white h-fit bg-fuchsia-700 rounded text-xl"
-      >
-        <BsTrash3 />
-      </button>
+      />
     </div>
   );
 };

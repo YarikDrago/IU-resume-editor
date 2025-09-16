@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ResumeContext } from '../../../../../builder';
 import { addSocialMedia } from '../units/addSocialMedia';
 import SocialMedia from '../components/SocialMedia';
-import { MdAddCircle } from 'react-icons/md';
+import AddBtn from '../../../../shared/button/AddBtn';
 
 const SocialMedias = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -13,16 +13,11 @@ const SocialMedias = () => {
       {resumeData.socialMedia.map((socialMedia, index) => (
         <SocialMedia key={index} socialMedia={socialMedia} index={index} />
       ))}
-      <button
-        type="button"
+      <AddBtn
         onClick={() => {
           addSocialMedia(resumeData, setResumeData);
         }}
-        aria-label="Add"
-        className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl"
-      >
-        <MdAddCircle />
-      </button>
+      />
     </div>
   );
 };
