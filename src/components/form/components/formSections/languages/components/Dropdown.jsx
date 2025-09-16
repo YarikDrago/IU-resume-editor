@@ -10,24 +10,7 @@ const Dropdown = ({ options, activeOption, onChange }) => {
 
   return (
     <div className="w-64">
-      <select
-        value={activeOption}
-        onChange={handleChange}
-        className="
-          w-full
-          p-2
-          text-slate-50
-          border
-          border-gray-300
-          rounded
-          [&>option]:text-black
-          bg-transparent
-          focus:outline-none
-          focus:ring-2
-          focus:ring-blue-500
-        "
-        required
-      >
+      <select value={activeOption} onChange={handleChange} required>
         {options.map((option, idx) => (
           <option key={idx} value={option}>
             {option}

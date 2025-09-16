@@ -42,11 +42,19 @@
     }
 
     .form input {
-        @apply w-full p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+        @apply w-full h-10 p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
     }
 
     .form textarea {
-        @apply w-full p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+        @apply w-full min-h-10 p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+    }
+
+    .form select {
+        @apply w-full h-10 p-2 mb-2 text-slate-50 bg-transparent rounded-lg focus:placeholder-transparent border border-gray-300;
+    }
+
+    .form select option {
+        @apply text-black;
     }
 
     .pi {
