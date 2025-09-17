@@ -5,5 +5,6 @@ A cutting-edge resume builder that helps job seekers create a professional, ATS-
 ## Demo
 
 #### [IU Resume Editor (DEMO)](https://iu-resume-editor.vercel.app/)
-
+![image](./assets/preview_desktop.png)
+![image](./assets/preview_mobile.png)
 
