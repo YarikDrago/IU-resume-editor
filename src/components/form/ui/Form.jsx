@@ -63,9 +63,9 @@ const Form = () => {
         (resumeData.sidebarIsCollapsed ? 'md:w-[50px]' : 'md:w-[400px]')
       }
     >
+      <Header />
       {!resumeData.sidebarIsCollapsed && (
         <>
-          <Header />
           <div className={'flex flex-col flex-1 p-2 md:overflow-y-scroll'}>
             {React.createElement(
               blocks[resumeData.navigationActiveIdx].component,
