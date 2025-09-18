@@ -5,7 +5,12 @@ import Button from '../../../shared/button/Button';
 import { ResumeContext } from '../../../../builder';
 
 const Header = () => {
-  const { resumeData } = useContext(ResumeContext);
+  const { resumeData, setResumeData } = useContext(ResumeContext);
+
+  const handleMenuClick = () => {
+    setResumeData({ ...resumeData, menuIsOpened: !resumeData.menuIsOpened });
+  };
+
   return (
     <header
       className={'flex justify-center w-full bg-[var(--form-bg-secondary)] p-1'}
@@ -20,6 +25,7 @@ const Header = () => {
           className={
             'absolute top-0 left-0 box-sizing p-0 w-[50px] h-[50px] m-0 text-white hover:bg-transparent hover:text-fuchsia-500'
           }
+          onClick={handleMenuClick}
         >
           <CiMenuKebab className={`w-[40px] h-[40px]`} />
         </Button>

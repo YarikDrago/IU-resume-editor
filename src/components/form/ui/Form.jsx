@@ -12,6 +12,7 @@ import Navigator from '../components/navigator/ui/Navigator';
 import { ResumeContext } from '../../builder';
 import Header from '../components/header/ui/Header';
 import FormCloseOpenBtn from '../../FormCloseOpenBtn';
+import Menu from '../components/menu/ui/Menu';
 
 const blocks = [
   {
@@ -64,16 +65,19 @@ const Form = () => {
       }
     >
       <Header />
-      {!resumeData.sidebarIsCollapsed && (
-        <>
-          <div className={'flex flex-col flex-1 p-2 md:overflow-y-scroll'}>
-            {React.createElement(
-              blocks[resumeData.navigationActiveIdx].component,
-            )}
-          </div>
-          <Navigator maxIdx={blocks.length - 1} />
-        </>
-      )}
+      <div className={'relative flex flex-col flex-1 flex flex-col'}>
+        <Menu />
+        {!resumeData.sidebarIsCollapsed && (
+          <>
+            <div className={'flex flex-col flex-1 p-2 md:overflow-y-scroll'}>
+              {React.createElement(
+                blocks[resumeData.navigationActiveIdx].component,
+              )}
+            </div>
+            <Navigator maxIdx={blocks.length - 1} />
+          </>
+        )}
+      </div>
       <FormCloseOpenBtn />
     </form>
   );

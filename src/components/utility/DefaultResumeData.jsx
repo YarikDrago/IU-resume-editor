@@ -108,6 +108,7 @@ const DefaultResumeData = {
   ],
   navigationActiveIdx: 0,
   sidebarIsCollapsed: false,
+  menuIsOpened: false,
 };
 
 export default DefaultResumeData;
