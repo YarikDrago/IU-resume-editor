@@ -18,10 +18,10 @@ const Header = () => {
           aria-label="Add"
           title={'Add'}
           className={
-            'absolute top-0 left-0 box-sizing w-[50px] h-[50px] m-[5px] text-white hover:bg-transparent hover:text-fuchsia-500'
+            'absolute top-0 left-0 box-sizing p-0 w-[50px] h-[50px] m-0 text-white hover:bg-transparent hover:text-fuchsia-500'
           }
         >
-          <CiMenuKebab className={`w-[50px] h-[50px]`} />
+          <CiMenuKebab className={`w-[40px] h-[40px]`} />
         </Button>
       )}
       <Logo
